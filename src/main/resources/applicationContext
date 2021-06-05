@@ -7,4 +7,12 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <bean id="dog" class="base.spring.model.impl.Dog"
+          destroy-method="destroyDog">
+        <property name="voice" value="Woof! Woof!"/>
+    </bean>
+    <bean id="cat" class="base.spring.model.impl.Cat"
+          destroy-method="destroyCat">
+        <property name="voice" value="Meow! Meow!"/>
+    </bean>
 </beans>
