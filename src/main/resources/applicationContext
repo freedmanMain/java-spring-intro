@@ -7,4 +7,10 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <bean id="dog" class="base.spring.model.impl.Dog">
+
+    </bean>
+    <bean id="cat" class="base.spring.model.impl.Cat">
+
+    </bean>
 </beans>
