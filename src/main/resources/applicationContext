@@ -7,18 +7,20 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="app.properties"/>
+
     <bean id="dog" class="base.spring.model.impl.Dog"
           destroy-method="destroy">
-        <property name="voice" value="Woof! Woof!"/>
+        <property name="voice" value="${pet.dog.voice}"/>
     </bean>
     <bean id="cat" class="base.spring.model.impl.Cat"
           destroy-method="destroy">
-        <property name="voice" value="Meow! Meow!"/>
+        <property name="voice" value="${pet.cat.voice}"/>
     </bean>
     <bean id="petOwner" class="base.spring.model.impl.PetOwner"
           destroy-method="destroy">
-        <constructor-arg index="0" value="Max"/>
-        <constructor-arg index="1" value="Fishin"/>
-        <constructor-arg index="2" ref="cat"/>
+        <property name="firstName" value="${petOwner.firstName}"/>
+        <property name="lastName" value="${petOwner.lastName}"/>
+        <property name="pet" ref="dog"/>
     </bean>
 </beans>

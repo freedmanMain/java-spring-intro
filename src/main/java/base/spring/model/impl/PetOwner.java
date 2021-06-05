@@ -7,6 +7,10 @@ public class PetOwner {
     private String lastName;
     private Pet pet;
 
+    public PetOwner() {
+
+    }
+
     public PetOwner(String firstName, String lastName, Pet pet) {
         this.firstName = firstName;
         this.lastName = lastName;
