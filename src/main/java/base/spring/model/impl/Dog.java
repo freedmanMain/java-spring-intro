@@ -1,8 +1,6 @@
 package base.spring.model.impl;
 
-import base.spring.model.Pet;
-
-public class Dog extends AbstractPet implements Pet {
+public class Dog extends AbstractPet {
     @Override
     public void voice() {
         System.out.println(getVoice());

@@ -7,6 +7,10 @@ public class PetOwner {
     private String lastName;
     private Pet pet;
 
+    public PetOwner(Pet pet) {
+        this.pet = pet;
+    }
+
     public void callYourPet() {
         System.out.println("Hi, my lovely pet <3");
         pet.voice();
