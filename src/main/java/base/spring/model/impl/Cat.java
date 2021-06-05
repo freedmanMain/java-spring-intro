@@ -17,4 +17,8 @@ public class Cat implements Pet {
     public void voice() {
         System.out.println(voice);
     }
+
+    public void destroyCat() {
+        System.out.println("Cat object is destroyed!");
+    }
 }
