@@ -1,6 +1,8 @@
 package base.spring.model.impl;
 
-public abstract class AbstractPet {
+import base.spring.model.Pet;
+
+public abstract class AbstractPet implements Pet {
     private String voice;
 
     public String getVoice() {
