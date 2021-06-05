@@ -1,12 +1,14 @@
 package base.spring;
 
 import base.spring.model.impl.PetOwner;
-import base.spring.util.ContextUtil;
+import base.spring.util.ClassPathXmlApplicationContextUtil;
 
 public class Main {
     public static void main(String[] args) {
-        PetOwner petOwner = ContextUtil.getContext().getBean("petOwner", PetOwner.class);
+        PetOwner petOwner = ClassPathXmlApplicationContextUtil
+                .getContext()
+                .getBean("petOwner", PetOwner.class);
         petOwner.callYourPet();
-        ContextUtil.getContext().close();
+        ClassPathXmlApplicationContextUtil.getContext().close();
     }
 }
