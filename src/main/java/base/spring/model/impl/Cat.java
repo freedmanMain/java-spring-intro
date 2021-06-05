@@ -2,7 +2,7 @@ package base.spring.model.impl;
 
 import org.springframework.stereotype.Component;
 
-@Component("cat")
+@Component("catBean")
 public class Cat extends AbstractPet {
     @Override
     public void voice() {

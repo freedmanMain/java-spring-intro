@@ -1,7 +1,10 @@
 package base.spring.model.impl;
 
 import base.spring.model.Pet;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component("petOwner")
 public class PetOwner {
     private String firstName;
     private String lastName;
@@ -9,6 +12,11 @@ public class PetOwner {
 
     public PetOwner() {
 
+    }
+
+    @Autowired
+    public PetOwner(Pet pet) {
+        this.pet = pet;
     }
 
     public PetOwner(String firstName, String lastName, Pet pet) {
