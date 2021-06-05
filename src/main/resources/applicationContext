@@ -8,11 +8,11 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="dog" class="base.spring.model.impl.Dog"
-          destroy-method="destroyDog">
+          destroy-method="destroy">
         <property name="voice" value="Woof! Woof!"/>
     </bean>
     <bean id="cat" class="base.spring.model.impl.Cat"
-          destroy-method="destroyCat">
+          destroy-method="destroy">
         <property name="voice" value="Meow! Meow!"/>
     </bean>
 </beans>
