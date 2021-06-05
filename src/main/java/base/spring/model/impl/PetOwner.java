@@ -46,10 +46,6 @@ public class PetOwner {
         this.pet = pet;
     }
 
-    public void destroy() {
-        System.out.println("PetOwner object is destroyed!");
-    }
-
     @Override
     public String toString() {
         return "PetOwner{" + "firstName='" + firstName

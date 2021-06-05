@@ -12,6 +12,4 @@ public abstract class AbstractPet implements Pet {
     public void setVoice(String voice) {
         this.voice = voice;
     }
-
-    public abstract void destroy();
 }
