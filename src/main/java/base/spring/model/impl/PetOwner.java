@@ -7,7 +7,9 @@ public class PetOwner {
     private String lastName;
     private Pet pet;
 
-    public PetOwner(Pet pet) {
+    public PetOwner(String firstName, String lastName, Pet pet) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.pet = pet;
     }
 
@@ -38,5 +40,15 @@ public class PetOwner {
 
     public void setPet(Pet pet) {
         this.pet = pet;
+    }
+
+    public void destroy() {
+        System.out.println("PetOwner object is destroyed!");
+    }
+
+    @Override
+    public String toString() {
+        return "PetOwner{" + "firstName='" + firstName
+                + '\'' + ", lastName='" + lastName + '}';
     }
 }

@@ -7,13 +7,18 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="dog" class="base.spring.model.impl.Dog" destroy-method="destroy">
+    <bean id="dog" class="base.spring.model.impl.Dog"
+          destroy-method="destroy">
         <property name="voice" value="Woof! Woof!"/>
     </bean>
-    <bean id="cat" class="base.spring.model.impl.Cat" destroy-method="destroy">
+    <bean id="cat" class="base.spring.model.impl.Cat"
+          destroy-method="destroy">
         <property name="voice" value="Meow! Meow!"/>
     </bean>
-    <bean id="petOwner" class="base.spring.model.impl.PetOwner">
-        <constructor-arg ref="dog"/>
+    <bean id="petOwner" class="base.spring.model.impl.PetOwner"
+          destroy-method="destroy">
+        <constructor-arg index="0" value="Max"/>
+        <constructor-arg index="1" value="Fishin"/>
+        <constructor-arg index="2" ref="cat"/>
     </bean>
 </beans>
