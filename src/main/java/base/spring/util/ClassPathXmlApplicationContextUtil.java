@@ -3,7 +3,7 @@ package base.spring.util;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class ClassPathXmlApplicationContextUtil {
-    private static final String CONFIGURATION_FILE = "applicationContext";
+    private static final String CONFIGURATION_FILE = "applicationContext.xml";
     private static final ClassPathXmlApplicationContext context = initContext();
 
     private ClassPathXmlApplicationContextUtil() {
@@ -15,7 +15,7 @@ public class ClassPathXmlApplicationContextUtil {
             return new ClassPathXmlApplicationContext(CONFIGURATION_FILE);
         } catch (Exception e) {
             throw new RuntimeException("Error! Can't create ClassPathXmlApplicationContext object. "
-                    + "Wrong applicationContext file path=" + CONFIGURATION_FILE, e);
+                    + "Wrong applicationContextXml.xml file path=" + CONFIGURATION_FILE, e);
         }
     }
 
