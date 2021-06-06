@@ -1,6 +1,6 @@
 package base.spring.model;
 
-public class AbstractPet {
+public abstract class AbstractPet {
     private String petName;
     private int petAge;
 
