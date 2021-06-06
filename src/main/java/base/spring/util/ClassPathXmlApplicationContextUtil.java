@@ -4,7 +4,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class ClassPathXmlApplicationContextUtil {
     private static final String CONFIGURATION_FILE = "applicationContext.xml";
-    private static final String CONFIGURATION_FILE_XML = "applicationContextXml.xml";
     private static final ClassPathXmlApplicationContext context = initContext();
 
     private ClassPathXmlApplicationContextUtil() {

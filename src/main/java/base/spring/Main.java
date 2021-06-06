@@ -7,7 +7,8 @@ public class Main {
     public static void main(String[] args) {
         PetOwner petOwner = ClassPathXmlApplicationContextUtil
                 .getContext()
-                .getBean("petOwner", PetOwner.class);
+                .getBean("petOwnerBean", PetOwner.class);
+        System.out.println("Pet owner info=" + petOwner);
         petOwner.callYourPet();
         ClassPathXmlApplicationContextUtil.getContext().close();
     }

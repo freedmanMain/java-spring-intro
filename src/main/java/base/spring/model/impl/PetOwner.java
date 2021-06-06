@@ -2,11 +2,20 @@ package base.spring.model.impl;
 
 import base.spring.model.Pet;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component("petOwner")
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+@Component("petOwnerBean")
+@Scope("prototype")
 public class PetOwner {
+    @Value("${pet.owner.firstName}")
     private String firstName;
+    @Value("${pet.owner.lastName}")
     private String lastName;
     private Pet pet;
 
@@ -14,7 +23,6 @@ public class PetOwner {
 
     }
 
-    @Autowired
     public PetOwner(Pet pet) {
         this.pet = pet;
     }
@@ -50,13 +58,26 @@ public class PetOwner {
         return pet;
     }
 
+    @Autowired
+    @Qualifier("catBean")
     public void setPet(Pet pet) {
         this.pet = pet;
     }
 
+    @PostConstruct
+    protected void init() {
+        System.out.println("PetOwner was created.");
+    }
+
+    @PreDestroy
+    protected void destroy() {
+        System.out.println("This method doesn't called because bean scope type is 'prototype'");
+    }
+
     @Override
     public String toString() {
-        return "PetOwner{" + "firstName='" + firstName
-                + '\'' + ", lastName='" + lastName + '}';
+        return "PetOwner{" + "firstName='" + firstName + '\''
+                + ", lastName='" + lastName + '\''
+                + ", pet=" + pet + '}';
     }
 }
