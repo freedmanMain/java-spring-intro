@@ -11,7 +11,7 @@ public class AnnotationConfigApplicationContextUtil {
             context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
         } catch (Exception e) {
             throw new RuntimeException("Error! Can't create AnnotationConfigApplicationContext object. "
-                    + ApplicationConfig.class + " class not found!", e);
+                    + ApplicationConfig.class + " is not config class!", e);
         }
     }
 
